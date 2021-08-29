@@ -1,0 +1,130 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+apply from: "../ktlint.gradle"
+
+android {
+    compileSdkVersion Config.compileSdkVersion
+    buildToolsVersion Config.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.agromall.tellerium"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.schemaLocation"  : "$projectDir/schemas".toString(),
+                        "room.incremental"     : "true",
+                        "room.expandProjection": "true"]
+            }
+        }
+        minSdkVersion Config.minSdkVersion
+        targetSdkVersion Config.targetSdkVersion
+        versionCode Config.versionCode
+        versionName Config.versionName
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled = true
+        buildFeatures {
+            viewBinding true
+        }
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(':presentation')
+    implementation project(':data')
+    implementation project(':domain')
+
+    implementation Libraries.kotlin
+    implementation Libraries.appCompat
+//    implementation Libraries.androidXExtensions
+    implementation Libraries.constraintLayout
+    implementation Libraries.materialDesign
+    implementation Libraries.androiXLegacy
+    implementation Libraries.recyclerView
+    implementation Libraries.hdodenhof
+//    implementation Libraries.mpChart
+
+    implementation Libraries.kotlin
+    implementation Libraries.javaxInject
+    implementation Libraries.coreKtx
+    implementation Libraries.viewModelKtx
+    implementation Libraries.fragmentKtx
+    implementation Libraries.lifecycleKtx
+
+    implementation Libraries.coroutineCore
+    implementation Libraries.coroutineAndroid
+    implementation Libraries.lifecycleKtx
+    implementation Libraries.viewModelKtx
+    implementation Libraries.coreKtx
+    implementation Libraries.liveDataKtx
+
+
+    implementation Libraries.timber
+    implementation Libraries.glide
+    implementation Libraries.gson
+
+    implementation Libraries.lifecyleRuntime
+    implementation Libraries.roomRunTime
+    implementation Libraries.lifecycleExtensions
+    implementation Libraries.lifecycleRxStreams
+
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation Libraries.daggerHilt
+    kapt Libraries.daggerHiltProcessor
+    implementation Libraries.hiltLifecycle
+    kapt Libraries.hiltLifecycleProcessor
+
+    implementation Libraries.lottie
+    implementation Libraries.mpChart
+
+    // Instrumentation test dependencies
+    androidTestImplementation TestLibraries.jUnit
+    androidTestImplementation TestLibraries.mockitoKotlin
+    androidTestImplementation TestLibraries.androidXJUnit
+    // Core library
+    androidTestImplementation TestLibraries.androidXCore
+
+    // AndroidJUnitRunner and JUnit Rules
+    androidTestImplementation TestLibraries.androidXTestRunnner
+    androidTestImplementation TestLibraries.androidXTestRules
+
+    // Assertions
+    androidTestImplementation TestLibraries.androidXTruth
+    androidTestImplementation TestLibraries.googleTruth
+
+    // Espresso dependencies
+    androidTestImplementation TestLibraries.espresso
+    androidTestImplementation TestLibraries.espressoContrib
+    androidTestImplementation TestLibraries.espresooIntent
+    androidTestImplementation TestLibraries.espressoAccessiblity
+    androidTestImplementation TestLibraries.espressoWeb
+    androidTestImplementation TestLibraries.espresspIdlineConcurrent
+    implementation 'com.robinhood.spark:spark:1.2.0'
+
+//    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+}

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_marginVertical="16dp"
+        android:layout_width="match_parent"
+        android:text="Analytics"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"/>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:scrollbars="none"
+        android:paddingVertical="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:text="January"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"/>
+            <TextView
+                android:text="February"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:text="March"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:text="April"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"/>
+            <TextView
+                android:text="May"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:text="June"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:text="July"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"/>
+            <TextView
+                android:text="August"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"/>
+
+            <TextView
+                android:text="September"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        style="@style/CurvedTabLayout150"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_gravity="center"
+        android:paddingVertical="4dp"
+        android:paddingHorizontal="6dp"
+        android:background="@drawable/tab_selector"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="16dp" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pagerMore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</LinearLayout>

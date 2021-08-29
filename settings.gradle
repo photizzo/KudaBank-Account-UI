@@ -1,0 +1,5 @@
+rootProject.name = "Agromall"
+include ':tellerium'
+include ':domain'
+include ':data'
+include ':presentation'
